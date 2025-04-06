@@ -99,9 +99,15 @@ const faustina = Faustina({ subsets: ['latin'], weight: ['400'], variable: '--fo
 const playfair = Playfair({ subsets: ['latin'], weight: ['400'], variable: '--font-playfair' });
 const ultra = Ultra({ subsets: ['latin'], weight: ['400'], variable: '--font-poppins' });
 
+//Arrays of fonts
 const SansSerifFonts = [roboto, openSans, lato, montserrat, poppins, inter, oswald, nunito, quicksand, rubik, codystar, manrope, inconsolata, karla, outfit, jost, figtree, cabin, mukta, dosis, lexend];
 const SerifFonts = [arvo, cinzel, cormorant, domine, spectral, alegreya, prata, amiri, cardo, aleo, rokkitt, gelasio, neuton, fraunces, baskervville, pridi, forum, literata, faustina, playfair, ultra];
 
+// Arrays of font links
+const SansSerifFontLinks = ["https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmaiArmlw.woff2", "https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVIGxA.woff2", "https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjxAwXjeu.woff2", "https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXpsog.woff2", "https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJnecmNE.woff2", "https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZFhiI2B.woff2", "https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUhiZTaR.woff2", "https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTo3j77e.woff2", "https://fonts.gstatic.com/s/quicksand/v36/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58i-wi40.woff2", "https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFWUU1Z4Y.woff2", "https://fonts.gstatic.com/s/codystar/v17/FwZY7-Q1xVk-40qxOu6J6MmTpA.woff2", "https://fonts.gstatic.com/s/manrope/v15/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk79FN_M-bnBeA.woff2", "https://fonts.gstatic.com/s/inconsolata/v32/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WRP2l2eY.woff2", "https://fonts.gstatic.com/s/karla/v31/qkBIXvYC6trAT55ZBi1ueQVIjQTD-JqaHUlKd7c.woff2", "https://fonts.gstatic.com/s/outfit/v11/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1O4i0ExAo.woff2", "https://fonts.gstatic.com/s/jost/v18/92zPtBhPNqw79Ij1E865zBUv7myjJTVPNIg8mg.woff2", "https://fonts.gstatic.com/s/figtree/v7/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_d_QG5XyEAk4A.woff2", "https://fonts.gstatic.com/s/cabin/v27/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkV2EH7ilx17r.woff2", "https://fonts.gstatic.com/s/mukta/v16/iJWKBXyXfDDVXbnPrXyi0A.woff2", "https://fonts.gstatic.com/s/dosis/v32/HhyJU5sn9vOmLxNkIwRSjTVNWLEJN7Ml1RMEfq4.woff2", "https://fonts.gstatic.com/s/lexend/v24/wlptgwvFAVdoq2_F94zlCfv0bz1WCzsWzLlnepKu.woff2"];
+const SerifFontLinks = ["https://fonts.gstatic.com/s/arvo/v22/tDbD2oWUg0MKqScQ7Q.woff2", "https://fonts.gstatic.com/s/cinzel/v23/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnfYPlDX5Z.woff2", "https://fonts.gstatic.com/s/cormorant/v21/H4c2BXOCl9bbnla_nHIA47NMUjsNbCVrFhFTc71q7T2u.woff2", "https://fonts.gstatic.com/s/domine/v23/L0xhDFMnlVwD4h3Lt9JWnbX3jG-2X3LAE1QfE4Gu.woff2", "https://fonts.gstatic.com/s/spectral/v14/rnCr-xNNww_2s0amA9M3knj-SA.woff2", "https://fonts.gstatic.com/s/alegreya/v36/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNG9hU49aqjgSE.woff2", "https://fonts.gstatic.com/s/prata/v20/6xKhdSpbNNCT-sWPCm4.woff2", "https://fonts.gstatic.com/s/amiri/v27/J7aRnpd8CGxBHpUgtLMA7w.woff2", "https://fonts.gstatic.com/s/cardo/v19/wlp_gwjKBV1pqhv23IEp2A.woff2", "https://fonts.gstatic.com/s/aleo/v14/c4m61nF8G8_s6gHhIOX0IYBo_KJ3GlP0Fo8aCA.woff2", "https://fonts.gstatic.com/s/rokkitt/v36/qFdb35qfgYFjGy5hukqqhw5XeRgdi1ryd6DCGb-3vA.woff2", "https://fonts.gstatic.com/s/gelasio/v12/cIfiMaFfvUQxTTqS3iKJkLGbI41wQL8Ilxcl8zH-8A.woff2", "https://fonts.gstatic.com/s/neuton/v22/UMBTrPtMoH62xUZCwYg6Qis.woff2", "https://fonts.gstatic.com/s/fraunces/v32/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib1603gg7S2nfgRYIctxuTB_7TtUs.woff2", "https://fonts.gstatic.com/s/baskervville/v16/YA9Ur0yU4l_XOrogbkun3kQQvpmptvY.woff2", "https://fonts.gstatic.com/s/pridi/v13/2sDQZG5JnZLfkcWTqWgbbg.woff2", "https://fonts.gstatic.com/s/forum/v18/6aey4Ky-Vb8Ew8IfOpIq3g.woff2", "https://fonts.gstatic.com/s/literata/v35/or3PQ6P12-iJxAIgLa78DkrbXsDgk0oVDaDPYLanFLHpPf2TbBG_J__WTFCW.woff2", "https://fonts.gstatic.com/s/faustina/v20/XLY4IZPxYpJfTbZAFXWzNT2SO8wpWHlsgoEfEF-XS8s.woff2", "https://fonts.gstatic.com/s/playfair/v9/0nkQC9D7PO4KhmUJ5_zTZ_4MYQXznAK-TUcZXKO3UMnW6VNpe4-SiiZ4b8h5G3GutPkUeugUqyIA5g.woff2", "https://fonts.gstatic.com/s/ultra/v24/zOLy4prXmrtY-uTzwrKz6A.woff2"];
+
+//Random font selection
 const randomSansSerifFont = SansSerifFonts[Math.floor(Math.random() * SansSerifFonts.length)];
 const randomSerifFont = SerifFonts[Math.floor(Math.random() * SerifFonts.length)];
 
@@ -123,16 +129,22 @@ export function RandomSerifFontButton() {
 
 export function RandomSansSerifFontButton() {
   const [fontClass, setFontClass] = useState(SansSerifFonts[0].className);
+  const [fontLink, setFontLink] = useState(SansSerifFontLinks[0]); // New state for the font link
 
   const changeFont = () => {
-
-    const random = SansSerifFonts[Math.floor(Math.random() * SansSerifFonts.length)];
-    setFontClass(random.className);
+    const randomIndex = Math.floor(Math.random() * SansSerifFonts.length); // Get random index
+    const randomFont = SansSerifFonts[randomIndex];
+    setFontClass(randomFont.className);
+    setFontLink(SansSerifFontLinks[randomIndex]); // Update the link using the same index
   };
 
   return (
-    <Button className={fontClass} onClick={changeFont} variant="outline">
-      Sans Serif Button
-    </Button>
-  );
+  <Button className={fontClass} onClick={changeFont} variant="outline">
+    Sans Serif Button
+    <br />
+    <a href={fontLink} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.8em', color: 'blue', textDecoration: 'underline' }}>
+      Link
+    </a>
+  </Button>
+);
 }
