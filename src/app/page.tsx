@@ -25,14 +25,14 @@ export default function Home() {
       <ColorController />
 
       <div className="flex flex-col items-center justify-center h-screen space-y-4 bg-gray-100">
-        <h1 className="text-4xl font-bold">About</h1>
+        <h1 className="text-4xl font-poppins font-bold text-[#9684E3]">About</h1>
         <Image
           src="/pallitagain.gif"
           alt="Pallit Animation"
           width={300}
           height={300}
         />
-        <p className="text-center max-w-2xl text-lg">
+        <p className="text-center font-poppins font-bold max-w-2xl text-lg text-[#9684E3]">
           About pallit! pallit was designed as a tool for programmers, artists,
           and designers alike seeking simple solutions to creating functional,
           fabulous color and font schemes for their own unique uses. Cut out

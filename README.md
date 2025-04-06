@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This Project was created in about 24 hours for HackUSF 2025, between April 5th and 6th, by  Sebastian Garcia, Elizabeth Pretto-Sotelo, Benjamin Quintero, & Daniel Schevis.
 
-## Getting Started
+pallit was developed in the Next.js React framework and used a series of libraries, components, and APIS to 
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+What is pallit?
+Pallit is a web application designed to help people create and discover matching color palettes and fonts for their projects. It allows a user to generate random combinations of colors and fonts for headings, subheadings, or bodies of text, all of which can be modified and personalized to meet a user’s wants.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Why Was pallit Made?
+Coming up with coherent color schemes and matching fonts can be an extremely tedious process, so Pallit makes it easier by simply displaying fonts and colors to the user, allowing them to discover them at a much faster rate than one would normally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Who Was pallit Made For?
+Anyone looking for good fonts and color schemes to use in their project designs.
 
-## Learn More
+Tools Used to Make pallit
+Pallit was primarily developed in Javascript, Typescript, and CSS, using the Next.js framework with TailwindCSS and Vite .
 
-To learn more about Next.js, take a look at the following resources:
+We utilized components from the ShadCN and Radix UI component libraries. We also utilzied the chroma.js and tinycolor2 JavaScript libraries.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+We utilized the Google Fonts API to aid in our font usage.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+How to Run pallit
+Clone the GitHub repo into a folder using the following link: https://github.com/elizabethprettosotelo/pallit.git
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open the folder using a terminal, or utilize the terminal in a code editor of your choice
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Use this command: npm install
+
+Then use this command: npm run dev
+
+Open http://localhost:3000, and have fun!
