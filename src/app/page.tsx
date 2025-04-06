@@ -1,105 +1,295 @@
 import Image from "next/image";
 
-// test
+import { FontSizeIcon, GitHubLogoIcon } from "@radix-ui/react-icons"
+import { Toggle } from "@/components/ui/toggle"; // Ensure this path is correct
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+
+
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <div className="absolute z-50 px-16 py-13 top-1">
+        <Image src="/pallitslogan.svg" alt="Logo" width={200 } height={200} />
+      </div>
+      <div className="absolute px-16 py-13 top-1 right-1">
+        <a
+          href="https://github.com/elizabethprettosotelo/pallit/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button
+            className="w-12 h-12 text-white bg-[#9684E3] hover:bg-white hover:text-black rounded-full flex items-center justify-center"
+          >
+            <GitHubLogoIcon className="w-6 h-6" />
+          </button>
+        </a>
+      </div>
+      <div className="flex flex-col justify-center-safe h-screen space-y-4 p-14">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <Card className="w-8/12 right-4 h-8/12 px-4 py-6">
+          <CardHeader>
+        <CardTitle className="p-4 text-6xl font-bold">
+          Big Important Title Text
+        </CardTitle>
+        <CardDescription className="px-5 text-2xl">
+          Smaller description text
+        </CardDescription>
+          </CardHeader>
+          <CardContent className="px-11 text-3xl">
+        Body text! Lorem ipsum blah blah hsis s suus jsksks kslsls Lorem
+        ipsum blah blah hsis s suus jsksks kslsls Lorem ipsum blah blah hsis
+        s suus jsksks kslsls Lorem ipsum blah blah hsis s suus
+          </CardContent>
+        </Card>
+        <div className="absolute z-100 right-28 w-1/4 h-8/12 space-y-4 py-7">
+          <Card className="w-full h-full bg-background shadow-none border-none p- -translate-y-3">
+        <CardHeader className="mb-6">
+            <CardTitle className="text-3xl font-bold text-accent text-left">
+            Harmony Hub
+            </CardTitle>
+          <CardDescription className="flex flex-col text-base text-white text-left">
+            Personalize and tweak your generations!
+            {/* Heading Controls */}
+            <div className="mt-4">
+            <h3 className="text-lg font-semibold text-left">Heading</h3>
+          <div
+            className="flex space-x-2 mt-2 rounded-lg"
+            style={{ background: "#AF125A96" }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <Button
+              style={{
+            backgroundColor: "#A54192",
+            color: "white",
+            border: "none",
+            height: "36px",
+            width: "112px",
+              }}
+              size="sm"
+            >
+              Generate Font
+            </Button>
+            <Button variant="outline" size="sm" className="w-10 p-0">
+              <div className="w-full h-full rounded-sm bg-current" />
+            </Button>
+            <Toggle aria-label="Toggle bold">
+              <span className="font-bold">B</span>
+            </Toggle>
+            <Toggle aria-label="Toggle italic">
+              <span className="italic">I</span>
+            </Toggle>
+            <Button
+              aria-label="Change font size"
+              className="bg-transparent text-white hover:bg-white hover:text-black"
+            >
+              <FontSizeIcon className=" hover:text-black" />
+            </Button>
+          </div>
+            </div>
+            {/* Subheading Controls */}
+            <div className="mt-4">
+          <h3 className="text-lg font-semibold text-left">Subheading</h3>
+          <div
+            className="flex space-x-2 mt-2 rounded-lg"
+            style={{ background: "#AF125A96" }}
           >
-            Read our docs
-          </a>
+            <Button
+              style={{
+            backgroundColor: "#A54192",
+            color: "white",
+            border: "none",
+            height: "36px",
+            width: "112px",
+              }}
+              size="sm"
+            >
+              Generate Font
+            </Button>
+            <Button variant="outline" size="sm" className="w-10 p-0">
+              <div className="w-full h-full rounded-sm bg-current" />
+            </Button>
+            <Toggle aria-label="Toggle bold">
+              <span className="font-bold">B</span>
+            </Toggle>
+            <Toggle aria-label="Toggle italic">
+              <span className="italic">I</span>
+            </Toggle>
+            <Button
+              aria-label="Change font size"
+              className="bg-transparent text-white hover:bg-white hover:text-black"
+            >
+              <FontSizeIcon className=" hover:text-black" />
+            </Button>
+          </div>
+            </div>
+            {/* Body Controls */}
+            <div className="mt-4">
+          <h3 className="text-lg font-semibold text-left">Body</h3>
+          <div
+            className="flex space-x-2 mt-2 rounded-lg"
+            style={{ background: "#AF125A96" }}
+          >
+            <Button
+              style={{
+            backgroundColor: "#A54192",
+            color: "white",
+            border: "none",
+            height: "36px",
+            width: "112px",
+              }}
+              size="sm"
+            >
+              Generate Font
+            </Button>
+            <Button variant="outline" size="sm" className="w-10 p-0">
+              <div className="w-full h-full rounded-sm bg-current" />
+            </Button>
+            <Toggle aria-label="Toggle bold">
+              <span className="font-bold">B</span>
+            </Toggle>
+            <Toggle aria-label="Toggle italic">
+              <span className="italic">I</span>
+            </Toggle>
+            <Button
+              aria-label="Change font size"
+              className="bg-transparent text-white hover:bg-white hover:text-black"
+            >
+              <FontSizeIcon className=" hover:text-black" />
+            </Button>
+          </div>
+            </div>
+            {/* Background */}
+            <div className="mt-4">
+          <h3 className="text-lg font-semibold text-left">Background</h3>
+          <div
+            className="flex space-x-2 mt-2 rounded-lg"
+            style={{ background: "#AF125A96" }}
+          >
+            <Button
+              style={{
+            backgroundColor: "#A54192",
+            color: "white",
+            border: "none",
+            height: "36px",
+            width: "112px",
+              }}
+              size="sm"
+            >
+              Generate Color
+            </Button>
+            <Button variant="outline" size="sm" className="w-10 p-0">
+              <div className="w-full h-full rounded-sm bg-current" />
+            </Button>
+          </div>
+            </div>
+          </CardDescription>
+
+          <div className="flex flex-col justify-end h-full space-x-4 py-6">
+            <div className="flex space-x-4">
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button
+            style={{
+              backgroundColor: "#AF125A",
+              color: "white",
+              width: "150px",
+            }}
+              >
+            Generate
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-80">
+              <div className="flex flex-col items-center space-y-4">
+            <div
+              id="color-display"
+              className="w-full h-16 rounded"
+              style={{ backgroundColor: "#FFFFFF" }}
+            ></div>
+            <div className="flex space-x-4 w-full">
+              <div
+                id="color-display-left"
+                className="w-1/2 h-16 rounded"
+                style={{ backgroundColor: "#FFFFFF" }}
+              ></div>
+              <div
+                id="color-display-right"
+                className="w-1/2 h-16 rounded"
+                style={{ backgroundColor: "#FFFFFF" }}
+              ></div>
+            </div>
+            <Button
+              onClick={async () => {
+                const response = await fetch(
+              "https://www.thecolorapi.com/random"
+                );
+                const data = await response.json();
+                const color = data.hex.value;
+
+                const schemeResponse = await fetch(
+              `https://www.thecolorapi.com/scheme?hex=${color.replace(
+                "#",
+                ""
+              )}&mode=complement&count=1`
+                );
+                const schemeData = await schemeResponse.json();
+                const complementColor =
+              schemeData.colors[0].hex.value;
+
+                const colorDisplayLeft =
+              document.getElementById("color-display-left");
+                const colorDisplayRight = document.getElementById(
+              "color-display-right"
+                );
+
+                if (colorDisplayLeft) {
+              colorDisplayLeft.style.backgroundColor = color;
+                }
+                if (colorDisplayRight) {
+              colorDisplayRight.style.backgroundColor =
+                complementColor;
+                }
+              }}
+              style={{
+                backgroundColor: "#AF125A",
+                color: "white",
+                width: "150px",
+              }}
+            >
+              Generate Colors
+            </Button>
+              </div>
+            </PopoverContent>
+          </Popover>
+          <Button
+            style={{
+              backgroundColor: "#9684E3",
+              color: "white",
+              width: "150px",
+            }}
+          >
+            Save Swatch
+          </Button>
+            </div>
+          </div>
+        </CardHeader>
+          </Card>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </>
   );
 }
