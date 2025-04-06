@@ -5,52 +5,59 @@ import "./globals.css";
 import { ReactNode } from 'react';
 import { useState } from 'react';
 
-// Imported Sans Serif fonts
+//heading fonts
+
+import { Righteous } from 'next/font/google';
+import { Oswald } from 'next/font/google';
+import { Prata } from 'next/font/google';
+import { Aleo } from 'next/font/google';
+import { Gelasio } from 'next/font/google';
+import { Neuton } from 'next/font/google';
+import { Fraunces } from 'next/font/google';
+import { Pridi } from 'next/font/google';
+import { Ultra } from 'next/font/google';
+
+
+//subheading
+
+
+import { Montserrat } from 'next/font/google';
+import { Nunito } from 'next/font/google';
+import { Quicksand } from 'next/font/google';
+import { Codystar } from 'next/font/google';
+import { Dosis } from 'next/font/google';
+import { Cinzel } from 'next/font/google';
+import { Alegreya } from 'next/font/google';
+import { Baskervville } from 'next/font/google';
+import { Forum } from 'next/font/google';
+
+
+//body text fonts
+
+
 import { Roboto } from 'next/font/google';
 import { Open_Sans } from 'next/font/google';
 import { Lato } from 'next/font/google';
-import { Montserrat } from 'next/font/google';
 import { Poppins } from 'next/font/google';
 import { Inter } from 'next/font/google';
-import { Oswald } from 'next/font/google';
-import { Nunito } from 'next/font/google';
-import { Quicksand } from 'next/font/google';
 import { Rubik } from 'next/font/google';
-import { Codystar } from 'next/font/google';
 import { Manrope } from 'next/font/google';
 import { Inconsolata } from 'next/font/google';
 import { Karla } from 'next/font/google';
 import { Outfit } from 'next/font/google';
 import { Jost } from 'next/font/google';
 import { Figtree } from 'next/font/google';
-import { Cabin } from 'next/font/google';
-import { Mukta } from 'next/font/google';
-import { Dosis } from 'next/font/google';
 import { Lexend } from 'next/font/google';
-
-// Imported Serif fonts
 import { Arvo } from 'next/font/google';
-import { Cinzel } from 'next/font/google';
 import { Cormorant } from 'next/font/google';
 import { Domine } from 'next/font/google';
 import { Spectral } from 'next/font/google';
-import { Alegreya } from 'next/font/google';
-import { Prata } from 'next/font/google';
-import { Amiri } from 'next/font/google';
-import { Cardo } from 'next/font/google';
-import { Aleo } from 'next/font/google';
-import { Rokkitt } from 'next/font/google';
-import { Gelasio } from 'next/font/google';
-import { Neuton } from 'next/font/google';
-import { Fraunces } from 'next/font/google';
-import { Baskervville } from 'next/font/google';
-import { Pridi } from 'next/font/google';
-import { Forum } from 'next/font/google';
 import { Literata } from 'next/font/google';
 import { Faustina } from 'next/font/google';
 import { Playfair } from 'next/font/google';
-import { Ultra } from 'next/font/google';
 
+
+//button 
 import { Button } from "@/components/ui/button"
 
 // Sans Serif Font imports
@@ -71,8 +78,6 @@ const karla = Karla({ subsets: ['latin'], weight: ['400'], variable: '--font-kar
 const outfit = Outfit({ subsets: ['latin'], weight: ['400'], variable: '--font-outfit' });
 const jost = Jost({ subsets: ['latin'], weight: ['400'], variable: '--font-jost' });
 const figtree = Figtree({ subsets: ['latin'], weight: ['400'], variable: '--font-figtree' });
-const cabin = Cabin({ subsets: ['latin'], weight: ['400'], variable: '--font-cabin' });
-const mukta = Mukta({ subsets: ['latin'], weight: ['400'], variable: '--font-mukta' });
 const dosis = Dosis({ subsets: ['latin'], weight: ['400'], variable: '--font-dosis' });
 const lexend = Lexend({ subsets: ['latin'], weight: ['400'], variable: '--font-lexend' });
 
@@ -84,10 +89,7 @@ const domine = Domine({ subsets: ['latin'], weight: ['400'], variable: '--font-d
 const spectral = Spectral({ subsets: ['latin'], weight: ['400'], variable: '--font-spectral' });
 const alegreya = Alegreya({ subsets: ['latin'], weight: ['400'], variable: '--font-alegreya' });
 const prata = Prata({ subsets: ['latin'], weight: ['400'], variable: '--font-prata' });
-const amiri = Amiri({ subsets: ['latin'], weight: ['400'], variable: '--font-amiri' });
-const cardo = Cardo({ subsets: ['latin'], weight: ['400'], variable: '--font-cardo' });
 const aleo = Aleo({ subsets: ['latin'], weight: ['400'], variable: '--font-aleo' });
-const rokkitt = Rokkitt({ subsets: ['latin'], weight: ['400'], variable: '--font-rokkitt' });
 const gelasio = Gelasio({ subsets: ['latin'], weight: ['400'], variable: '--font-gelasio' });
 const neuton = Neuton({ subsets: ['latin'], weight: ['400'], variable: '--font-neuton' });
 const fraunces = Fraunces({ subsets: ['latin'], weight: ['400'], variable: '--font-fraunces' });
@@ -100,8 +102,8 @@ const playfair = Playfair({ subsets: ['latin'], weight: ['400'], variable: '--fo
 const ultra = Ultra({ subsets: ['latin'], weight: ['400'], variable: '--font-poppins' });
 
 //Arrays of fonts
-const SansSerifFonts = [roboto, openSans, lato, montserrat, poppins, inter, oswald, nunito, quicksand, rubik, codystar, manrope, inconsolata, karla, outfit, jost, figtree, cabin, mukta, dosis, lexend];
-const SerifFonts = [arvo, cinzel, cormorant, domine, spectral, alegreya, prata, amiri, cardo, aleo, rokkitt, gelasio, neuton, fraunces, baskervville, pridi, forum, literata, faustina, playfair, ultra];
+const SansSerifFonts = [roboto, openSans, lato, montserrat, poppins, inter, oswald, nunito, quicksand, rubik, codystar, manrope, inconsolata, karla, outfit, jost, figtree, dosis, lexend];
+const SerifFonts = [arvo, cinzel, cormorant, domine, spectral, alegreya, prata, aleo, gelasio, neuton, fraunces, baskervville, pridi, forum, literata, faustina, playfair, ultra];
 
 // Arrays of font links
 const SansSerifFontLinks = ["https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbVmaiArmlw.woff2", "https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVIGxA.woff2", "https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjxAwXjeu.woff2", "https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXpsog.woff2", "https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJnecmNE.woff2", "https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZFhiI2B.woff2", "https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUhiZTaR.woff2", "https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTo3j77e.woff2", "https://fonts.gstatic.com/s/quicksand/v36/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58i-wi40.woff2", "https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFWUU1Z4Y.woff2", "https://fonts.gstatic.com/s/codystar/v17/FwZY7-Q1xVk-40qxOu6J6MmTpA.woff2", "https://fonts.gstatic.com/s/manrope/v15/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk79FN_M-bnBeA.woff2", "https://fonts.gstatic.com/s/inconsolata/v32/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WRP2l2eY.woff2", "https://fonts.gstatic.com/s/karla/v31/qkBIXvYC6trAT55ZBi1ueQVIjQTD-JqaHUlKd7c.woff2", "https://fonts.gstatic.com/s/outfit/v11/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1O4i0ExAo.woff2", "https://fonts.gstatic.com/s/jost/v18/92zPtBhPNqw79Ij1E865zBUv7myjJTVPNIg8mg.woff2", "https://fonts.gstatic.com/s/figtree/v7/_Xmz-HUzqDCFdgfMsYiV_F7wfS-Bs_d_QG5XyEAk4A.woff2", "https://fonts.gstatic.com/s/cabin/v27/u-4X0qWljRw-PfU81xCKCpdpbgZJl6XFpfEd7eA9BIxxkV2EH7ilx17r.woff2", "https://fonts.gstatic.com/s/mukta/v16/iJWKBXyXfDDVXbnPrXyi0A.woff2", "https://fonts.gstatic.com/s/dosis/v32/HhyJU5sn9vOmLxNkIwRSjTVNWLEJN7Ml1RMEfq4.woff2", "https://fonts.gstatic.com/s/lexend/v24/wlptgwvFAVdoq2_F94zlCfv0bz1WCzsWzLlnepKu.woff2"];
