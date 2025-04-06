@@ -1,22 +1,18 @@
-"use client";
-
 import Image from "next/image";
 
-import { LockClosedIcon, LockOpen1Icon, FontSizeIcon } from "@radix-ui/react-icons"
+import { FontSizeIcon, GitHubLogoIcon } from "@radix-ui/react-icons"
+import { Toggle } from "@/components/ui/toggle"; // Ensure this path is correct
 
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 
-import { Toggle } from "@/components/ui/toggle";
 
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
 import {
   Popover,
   PopoverContent,
@@ -24,20 +20,6 @@ import {
 } from "@/components/ui/popover";
 
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-
-function LockToggle() {
-  const [isLocked, setIsLocked] = useState(true);
-
-  return (
-    <Toggle
-      aria-label="Toggle lock"
-      onClick={() => setIsLocked(!isLocked)}
-    >
-      {isLocked ? <LockClosedIcon /> : <LockOpen1Icon />}
-    </Toggle>
-  );
-}
 
 export default function Home() {
   return (
@@ -45,9 +27,22 @@ export default function Home() {
       <div className="absolute z-50 px-16 py-13 top-1">
         <Image src="/pallitslogan.svg" alt="Logo" width={200 } height={200} />
       </div>
+      <div className="absolute px-16 py-13 top-1 right-1">
+        <a
+          href="https://github.com/elizabethprettosotelo/pallit/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button
+            className="w-12 h-12 text-white bg-[#9684E3] hover:bg-white hover:text-black rounded-full flex items-center justify-center"
+          >
+            <GitHubLogoIcon className="w-6 h-6" />
+          </button>
+        </a>
+      </div>
       <div className="flex flex-col justify-center-safe h-screen space-y-4 p-14">
 
-        <Card className="w-8/12 right-4 h-8/12">
+        <Card className="w-8/12 right-4 h-8/12 px-4 py-6">
           <CardHeader>
         <CardTitle className="p-4 text-6xl font-bold">
           Big Important Title Text
@@ -104,9 +99,6 @@ export default function Home() {
             >
               <FontSizeIcon className=" hover:text-black" />
             </Button>
-            <Toggle aria-label="Toggle lock">
-            <LockToggle />
-            </Toggle>
           </div>
             </div>
             {/* Subheading Controls */}
@@ -143,9 +135,6 @@ export default function Home() {
             >
               <FontSizeIcon className=" hover:text-black" />
             </Button>
-            <Toggle aria-label="Toggle lock">
-            <LockToggle />
-            </Toggle>
           </div>
             </div>
             {/* Body Controls */}
@@ -182,9 +171,6 @@ export default function Home() {
             >
               <FontSizeIcon className=" hover:text-black" />
             </Button>
-            <Toggle aria-label="Toggle lock">
-            <LockToggle />
-            </Toggle>
           </div>
             </div>
             {/* Background */}
@@ -209,9 +195,6 @@ export default function Home() {
             <Button variant="outline" size="sm" className="w-10 p-0">
               <div className="w-full h-full rounded-sm bg-current" />
             </Button>
-                    <Toggle aria-label="Toggle lock">
-            <LockToggle />
-            </Toggle>
           </div>
             </div>
           </CardDescription>
