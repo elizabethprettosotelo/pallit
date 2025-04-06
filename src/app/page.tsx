@@ -1,6 +1,9 @@
 "use client";
 
 import Image from "next/image";
+
+import { LockClosedIcon, LockOpen1Icon } from "@radix-ui/react-icons"
+
 import {
   Card,
   CardContent,
@@ -21,8 +24,20 @@ import {
 } from "@/components/ui/popover";
 
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
-// test
+function LockToggle() {
+  const [isLocked, setIsLocked] = useState(true);
+
+  return (
+    <Toggle
+      aria-label="Toggle lock"
+      onClick={() => setIsLocked(!isLocked)}
+    >
+      {isLocked ? <LockClosedIcon /> : <LockOpen1Icon />}
+    </Toggle>
+  );
+}
 
 export default function Home() {
   return (
@@ -54,105 +69,141 @@ export default function Home() {
               </CardTitle>
               <CardDescription className="flex flex-col text-base text-white">
                 Personalize and tweak your generations!
-                                {/* Heading Controls */}
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold">Heading</h3>
-                <div className="flex space-x-2 mt-2 rounded-lg" style={{ background: "#AF125A96" }}>
-                <Button
-                  style={{
-                  backgroundColor: "#A54192",
-                  color: "white",
-                  border: "none",
-                  height: "36px",
-                  width: "112px",
-                  }}
-                  size="sm"
-                >
-                  Generate Font
-                </Button>
-                <Button variant="outline" size="sm" className="w-10 p-0">
-                  <div className="w-full h-full rounded-sm bg-current"/>
-                </Button>
-                <Toggle aria-label="Toggle bold"><span className="font-bold">B</span></Toggle>
-                <Toggle aria-label="Toggle italic"><span className="italic">I</span></Toggle>
-                <Toggle aria-label="Toggle underline"><span className="underline">U</span></Toggle>
-              </div>
-            </div>
- {/* Subheading Controls */}
- <div className="mt-4">
-              <h3 className="text-lg font-semibold">Subheading</h3>
-              <div className="flex space-x-2 mt-2 rounded-lg" style={{ background: "#AF125A96" }}>
-                <Button
-                  style={{
-                  backgroundColor: "#A54192",
-                  color: "white",
-                  border: "none",
-                  height: "36px",
-                  width: "112px",
-                  }}
-                  size="sm"
-                >
-                  Generate Font
-                </Button>
-                <Button variant="outline" size="sm" className="w-10 p-0">
-                  <div className="w-full h-full rounded-sm bg-current" />
-                </Button>
-                <Toggle aria-label="Toggle bold">
-                  <span className="font-bold">B</span>
-                </Toggle>
-                <Toggle aria-label="Toggle italic">
-                  <span className="italic">I</span>
-                </Toggle>
-                <Toggle aria-label="Toggle underline">
-                  <span className="underline">U</span>
-                </Toggle>
+                {/* Heading Controls */}
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold">Heading</h3>
+                  <div
+                    className="flex space-x-2 mt-2 rounded-lg"
+                    style={{ background: "#AF125A96" }}
+                  >
+                    <Button
+                      style={{
+                        backgroundColor: "#A54192",
+                        color: "white",
+                        border: "none",
+                        height: "36px",
+                        width: "112px",
+                      }}
+                      size="sm"
+                    >
+                      Generate Font
+                    </Button>
+                    <Button variant="outline" size="sm" className="w-10 p-0">
+                      <div className="w-full h-full rounded-sm bg-current" />
+                    </Button>
+                    <Toggle aria-label="Toggle bold">
+                      <span className="font-bold">B</span>
+                    </Toggle>
+                    <Toggle aria-label="Toggle italic">
+                      <span className="italic">I</span>
+                    </Toggle>
+                    <Toggle aria-label="Toggle underline">
+                      <span className="underline">U</span>
+                    </Toggle>
+                    <Toggle aria-label="Toggle lock">
+                        <LockToggle />
+                    </Toggle>
+                  </div>
                 </div>
-            </div>
-            {/* Body Controls */}
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold">Body</h3>
-              <div className="flex space-x-2 mt-2 rounded-lg" style={{ background: "#AF125A96" }}>
-                <Button
-                  style={{
-                  backgroundColor: "#A54192",
-                  color: "white",
-                  border: "none",
-                  height: "36px",
-                  width: "112px",
-                  }}
-                  size="sm"
-                >
-                  Generate Font
-                </Button>
-                <Button variant="outline" size="sm" className="w-10 p-0">
-                  <div className="w-full h-full rounded-sm bg-current"/>
-                </Button>
-                <Toggle aria-label="Toggle bold"><span className="font-bold">B</span></Toggle>
-                <Toggle aria-label="Toggle italic"><span className="italic">I</span></Toggle>
-                <Toggle aria-label="Toggle underline"><span className="underline">U</span></Toggle>
-              </div>
-            </div>
-                        {/* Body Controls */}
-                        <div className="mt-4">
-              <h3 className="text-lg font-semibold">BAckground</h3>
-              <div className="flex space-x-2 mt-2 rounded-lg" style={{ background: "#AF125A96" }}>
-                <Button
-                  style={{
-                  backgroundColor: "#A54192",
-                  color: "white",
-                  border: "none",
-                  height: "36px",
-                  width: "112px",
-                  }}
-                  size="sm"
-                >
-                  Generate Color
-                </Button>
-                <Button variant="outline" size="sm" className="w-10 p-0">
-                  <div className="w-full h-full rounded-sm bg-current"/>
-                </Button>
-              </div>
-            </div>
+                {/* Subheading Controls */}
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold">Subheading</h3>
+                  <div
+                    className="flex space-x-2 mt-2 rounded-lg"
+                    style={{ background: "#AF125A96" }}
+                  >
+                    <Button
+                      style={{
+                        backgroundColor: "#A54192",
+                        color: "white",
+                        border: "none",
+                        height: "36px",
+                        width: "112px",
+                      }}
+                      size="sm"
+                    >
+                      Generate Font
+                    </Button>
+                    <Button variant="outline" size="sm" className="w-10 p-0">
+                      <div className="w-full h-full rounded-sm bg-current" />
+                    </Button>
+                    <Toggle aria-label="Toggle bold">
+                      <span className="font-bold">B</span>
+                    </Toggle>
+                    <Toggle aria-label="Toggle italic">
+                      <span className="italic">I</span>
+                    </Toggle>
+                    <Toggle aria-label="Toggle underline">
+                      <span className="underline">U</span>
+                    </Toggle>
+                    <Toggle aria-label="Toggle lock">
+                        <LockToggle />
+                    </Toggle>
+                  </div>
+                </div>
+                {/* Body Controls */}
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold">Body</h3>
+                  <div
+                    className="flex space-x-2 mt-2 rounded-lg"
+                    style={{ background: "#AF125A96" }}
+                  >
+                    <Button
+                      style={{
+                        backgroundColor: "#A54192",
+                        color: "white",
+                        border: "none",
+                        height: "36px",
+                        width: "112px",
+                      }}
+                      size="sm"
+                    >
+                      Generate Font
+                    </Button>
+                    <Button variant="outline" size="sm" className="w-10 p-0">
+                      <div className="w-full h-full rounded-sm bg-current" />
+                    </Button>
+                    <Toggle aria-label="Toggle bold">
+                      <span className="font-bold">B</span>
+                    </Toggle>
+                    <Toggle aria-label="Toggle italic">
+                      <span className="italic">I</span>
+                    </Toggle>
+                    <Toggle aria-label="Toggle underline">
+                      <span className="underline">U</span>
+                    </Toggle>
+                    <Toggle aria-label="Toggle lock">
+                        <LockToggle />
+                    </Toggle>
+                  </div>
+                </div>
+                {/* Background */}
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold">Background</h3>
+                  <div
+                    className="flex space-x-2 mt-2 rounded-lg"
+                    style={{ background: "#AF125A96" }}
+                  >
+                    <Button
+                      style={{
+                        backgroundColor: "#A54192",
+                        color: "white",
+                        border: "none",
+                        height: "36px",
+                        width: "112px",
+                      }}
+                      size="sm"
+                    >
+                      Generate Color
+                    </Button>
+                    <Button variant="outline" size="sm" className="w-10 p-0">
+                      <div className="w-full h-full rounded-sm bg-current" />
+                    </Button>
+                    <Toggle aria-label="Toggle lock">
+                        <LockToggle />
+                    </Toggle>
+                  </div>
+                </div>
               </CardDescription>
 
               <div className="flex flex-col justify-end h-full space-x-4 py-6">
