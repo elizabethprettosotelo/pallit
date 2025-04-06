@@ -87,6 +87,10 @@
   }
   body {
     @apply bg-background text-foreground;
+<<<<<<< HEAD
+=======
+>>>>>>> colors
+>>>>>>> a94e2f034110f2de3fe2df85410535c94a8982b6
   }
 }
 
